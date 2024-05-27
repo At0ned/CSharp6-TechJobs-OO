@@ -1,39 +1,40 @@
 ﻿using System;
+//If something breaks later in the code, you changed the capitalization of id and value, and changed from private to public
 namespace TechJobsOOAutoGraded6
 {
 	public class CoreCompetency
 	{
-        private int id;
+        public int Id { get;}
         private static int nextId = 1;
-        private string value;
+        public string Value { get; set; }
 
         // TODO: Task 2: Change the fields to auto-implemented properties.
 
         public CoreCompetency()
         {
-            id = nextId;
+            Id = nextId;
             nextId++;
         }
 
         public CoreCompetency(string v) : this()
         {
-            value = v;
+            Value = v;
         }
 
         public override bool Equals(object obj)
         {
             return obj is CoreCompetency competency &&
-                   id == competency.id;
+                   Id == competency.Id;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(id);
+            return HashCode.Combine(Id);
         }
 
         public override string ToString()
         {
-            return value;
+            return Value;
         }
     }
 }
