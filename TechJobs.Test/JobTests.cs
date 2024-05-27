@@ -20,6 +20,22 @@ namespace TechJobs.Tests
         {
             Assert.IsFalse(job1.Id == job2.Id);
         }
+
+        [TestMethod]
+        public void TestJobConstructorSetsAllFields()
+        {
+            Assert.AreEqual("Product tester", job3.Name);
+            Assert.AreEqual("ACME", job3.EmployerName.ToString());
+            Assert.AreEqual("Desert", job3.EmployerLocation.ToString());
+            Assert.AreEqual("Quality control", job3.JobType.ToString());
+            Assert.AreEqual("Persistence", job3.JobCoreCompetency.ToString());
+        }
+
+        [TestMethod]
+        public void TestJobsForEquality()
+        {
+            Assert.IsTrue(!Equals(job3, job4));
+        }
     }
 }
 
