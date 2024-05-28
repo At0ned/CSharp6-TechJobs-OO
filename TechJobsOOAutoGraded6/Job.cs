@@ -45,6 +45,37 @@ namespace TechJobsOOAutoGraded6
 
         // TODO: Task 5: Generate custom ToString() method.
         //Until you create this method, you will not be able to print a job to the console.
+    public override string ToString() 
+    { 
+        // foreach (object item in Job)
+        if (Name == "") 
+        {
+            return "Data not available";
+        }
+         else if (EmployerName.ToString() == "") 
+        {
+            return "Data not available";
+        }
+         else if (EmployerLocation.ToString() == "") 
+        {
+            return "Data not available";
+        }
+        else if (JobType.ToString() == "") 
+        {
+            return "Data not available";
+        }
+        else if (JobCoreCompetency.ToString() == "") 
+        {
+            return JobCoreCompetency + "Data not available";
+        }
+        return Environment.NewLine + 
+        "Id: " + Id + Environment.NewLine +
+        "Name: " + Name + Environment.NewLine +
+        "Employer: " + EmployerName + Environment.NewLine +
+        "Location: " + EmployerLocation + Environment.NewLine +
+        "Position Type: " + JobType + Environment.NewLine +
+        "Core competency: " + JobCoreCompetency + Environment.NewLine;
+    }
 
 
 

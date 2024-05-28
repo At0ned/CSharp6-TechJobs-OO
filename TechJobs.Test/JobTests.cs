@@ -14,6 +14,10 @@ namespace TechJobs.Tests
     Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
     Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+
+    
+
 
         [TestMethod]
         public void TestSettingJobId()
@@ -36,6 +40,27 @@ namespace TechJobs.Tests
         {
             Assert.IsTrue(!Equals(job3, job4));
         }
+
+        [TestMethod]
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+        //data not available
+        Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
+        Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
+
+        }
+
+        [TestMethod]
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+        Assert.AreEqual(job5.ToString(), 3);
+        }
+
+        // [TestMethod]
+        // public void TestToStringHandlesEmptyField()
+        // {
+            
+        // }
     }
 }
 
