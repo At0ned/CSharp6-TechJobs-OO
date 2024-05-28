@@ -14,7 +14,7 @@ namespace TechJobs.Tests
     Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
     Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+    Job job5 = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
     
 
@@ -53,18 +53,19 @@ namespace TechJobs.Tests
         [TestMethod]
         public void TestToStringContainsCorrectLabelsAndData()
         {
-        Assert.IsTrue(job4.ToString().Contains("Id: " + job4.Id));
+        Assert.IsTrue(job4.ToString().Contains("ID: " + job4.Id));
         Assert.IsTrue(job4.ToString().Contains("Name: " + job4.Name));
         Assert.IsTrue(job4.ToString().Contains("Employer: " + job4.EmployerName));
         Assert.IsTrue(job4.ToString().Contains("Location: " + job4.EmployerLocation));
         Assert.IsTrue(job4.ToString().Contains("Position Type: " + job4.JobType));
-        Assert.IsTrue(job4.ToString().Contains("Core competency: " + job4.JobCoreCompetency));
+        Assert.IsTrue(job4.ToString().Contains("Core Competency: " + job4.JobCoreCompetency));
         }
 
         [TestMethod]
         public void TestToStringHandlesEmptyField()
         {
-        Assert.AreEqual("Data not available", job5.JobCoreCompetency.ToString());
+        Assert.IsTrue(job5.ToString().Contains("Data not available"));
+        // Assert.AreEqual(job5.ToString(), 3);
         }
     }
 }

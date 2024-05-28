@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Reflection.Metadata;
 namespace TechJobsOOAutoGraded6
@@ -50,39 +51,15 @@ namespace TechJobsOOAutoGraded6
     public override string ToString() 
     { 
         // need to make foreach to work so i can continue
-        
-        // foreach ()
-        // {   
-        // }
-        
-        if (Name == "")
-        {
-         return "Data not available";
-        }
-        else if (EmployerName.ToString() == "")
-        {
-         return "Data not available";
-        }
-        else if (EmployerLocation.ToString() == "")
-        {
-         return "Data not available";
-        }
-        else if (JobType.ToString() == "")
-        {
-         return "Data not available";
-        }
-        else if (JobCoreCompetency.ToString() == "")
-        {
-        return JobCoreCompetency.ToString() + "Data not available";
-        }
+        string empty = "Data not available";
 
         return Environment.NewLine + 
-        "Id: " + Id + Environment.NewLine +
-        "Name: " + Name + Environment.NewLine +
-        "Employer: " + EmployerName + Environment.NewLine +
-        "Location: " + EmployerLocation + Environment.NewLine +
-        "Position Type: " + JobType + Environment.NewLine +
-        "Core competency: " + JobCoreCompetency + Environment.NewLine;
+        "ID: " + Id + Environment.NewLine +
+        "Name: " + ((Name.Length != 0) ? Name : empty) + Environment.NewLine +
+        "Employer: " + ((EmployerName.ToString().Length != 0) ? EmployerName : empty) + Environment.NewLine +
+        "Location: " + ((EmployerLocation.ToString().Length != 0) ? EmployerLocation : empty) + Environment.NewLine +
+        "Position Type: " + ((JobType.ToString().Length != 0) ? JobType : empty) + Environment.NewLine +
+        "Core Competency: " + ((JobCoreCompetency.ToString().Length != 0) ? JobCoreCompetency : empty) + Environment.NewLine;
     }
 
 
