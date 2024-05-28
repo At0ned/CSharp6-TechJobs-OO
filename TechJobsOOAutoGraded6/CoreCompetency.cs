@@ -2,40 +2,12 @@
 //If something breaks later in the code, you changed the capitalization of id and value, and changed from private to public
 namespace TechJobsOOAutoGraded6
 {
-	public class CoreCompetency
+	public class CoreCompetency : JobField
 	{
-        public int Id { get;}
-        private static int nextId = 1;
-        public string Value { get; set; }
-
-        // TODO: Task 2: Change the fields to auto-implemented properties.
-
-        public CoreCompetency()
+        public CoreCompetency(string v) : base(v)
         {
-            Id = nextId;
-            nextId++;
         }
-
-        public CoreCompetency(string v) : this()
-        {
-            Value = v;
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is CoreCompetency competency &&
-                   Id == competency.Id;
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
-
-        public override string ToString()
-        {
-            return Value;
-        }
+    
     }
 }
 
