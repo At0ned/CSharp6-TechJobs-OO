@@ -44,7 +44,7 @@ namespace TechJobs.Tests
         [TestMethod]
         public void TestToStringStartsAndEndsWithNewLine()
         {
-        //data not available
+       
         Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
         Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
 
@@ -53,14 +53,19 @@ namespace TechJobs.Tests
         [TestMethod]
         public void TestToStringContainsCorrectLabelsAndData()
         {
-        Assert.AreEqual(job5.ToString(), 3);
+        Assert.IsTrue(job4.ToString().Contains("Id: " + job4.Id));
+        Assert.IsTrue(job4.ToString().Contains("Name: " + job4.Name));
+        Assert.IsTrue(job4.ToString().Contains("Employer: " + job4.EmployerName));
+        Assert.IsTrue(job4.ToString().Contains("Location: " + job4.EmployerLocation));
+        Assert.IsTrue(job4.ToString().Contains("Position Type: " + job4.JobType));
+        Assert.IsTrue(job4.ToString().Contains("Core competency: " + job4.JobCoreCompetency));
         }
 
-        // [TestMethod]
-        // public void TestToStringHandlesEmptyField()
-        // {
-            
-        // }
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+        Assert.AreEqual("Data not available", job5.JobCoreCompetency.ToString());
+        }
     }
 }
 

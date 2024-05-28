@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Reflection.Metadata;
 namespace TechJobsOOAutoGraded6
 {
 	public class Job
@@ -47,27 +49,33 @@ namespace TechJobsOOAutoGraded6
         //Until you create this method, you will not be able to print a job to the console.
     public override string ToString() 
     { 
-        // foreach (object item in Job)
-        if (Name == "") 
+        // need to make foreach to work so i can continue
+        
+        // foreach ()
+        // {   
+        // }
+        
+        if (Name == "")
         {
-            return "Data not available";
+         return "Data not available";
         }
-         else if (EmployerName.ToString() == "") 
+        else if (EmployerName.ToString() == "")
         {
-            return "Data not available";
+         return "Data not available";
         }
-         else if (EmployerLocation.ToString() == "") 
+        else if (EmployerLocation.ToString() == "")
         {
-            return "Data not available";
+         return "Data not available";
         }
-        else if (JobType.ToString() == "") 
+        else if (JobType.ToString() == "")
         {
-            return "Data not available";
+         return "Data not available";
         }
-        else if (JobCoreCompetency.ToString() == "") 
+        else if (JobCoreCompetency.ToString() == "")
         {
-            return JobCoreCompetency + "Data not available";
+        return JobCoreCompetency.ToString() + "Data not available";
         }
+
         return Environment.NewLine + 
         "Id: " + Id + Environment.NewLine +
         "Name: " + Name + Environment.NewLine +
