@@ -50,7 +50,6 @@ namespace TechJobsOOAutoGraded6
         //Until you create this method, you will not be able to print a job to the console.
     public override string ToString() 
     { 
-        // need to make foreach to work so i can continue
         string empty = "Data not available";
 
         return Environment.NewLine + 
